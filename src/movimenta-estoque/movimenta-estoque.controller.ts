@@ -15,6 +15,11 @@ export class MovimentaEstoqueController {
         return this.movimentaEstoque.findById(id)
     }
 
+    @Get(":produtoId")
+    async findByProdutoId(@Param() produtoId: number) {
+        return this.movimentaEstoque.findByProdutoId(produtoId)
+    }
+
     @Post()
     async create(@Body() movimentaEstoque) {
         return await this.movimentaEstoque.create(movimentaEstoque)

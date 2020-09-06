@@ -25,4 +25,8 @@ export class MovimentaEstoqueService {
     async findAll() {
         return this.movimentaEstoqueRepository.find();
     }
+
+    async findByProdutoId(produtoId: number) {
+        return this.movimentaEstoqueRepository.findOne(produtoId);
+    }
 }
